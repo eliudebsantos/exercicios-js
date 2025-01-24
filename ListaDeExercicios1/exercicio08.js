@@ -85,7 +85,7 @@ function avaliaPontuacoes (stringPontuacoes) {
 }
 
 console.log(avaliaPontuacoes(stringPontuacoes))*/
-
+/*
 let lista = "10 20 20 25 30 0 1"
 
 // [3, 6]
@@ -112,5 +112,31 @@ function avalia (lista) {
 
 console.log(avalia(lista))
 
+*/
 
+let pontos = "10, 20, 25, 30, 35, 40, 0"
 
+function teste (pontos) {
+    let lista = pontos.split(", ")
+    let maior = lista[0]
+    let recorde = 0
+    let menor = lista[0]
+    let posicao = ''
+    
+    
+
+    for (let i = 1; i < lista.length; i++) {
+        if (parseInt(lista[i]) > parseInt(maior)){
+            maior = lista[i]
+            recorde = recorde + 1
+        } else if (parseInt(lista[i]) < parseInt(menor)){
+            menor = lista[i]
+            posicao = i + 1
+        }
+    }
+    return [`Numero de recordes: ${recorde}`, `Quando foi a menor pontuação: na ${posicao}o vez`]
+}
+
+console.log(teste(pontos))
+
+//EU ERREI AS FUNÇÕES QUE FIZ POR CONTA DA PALAVRA RESERVADA LENGTH.... EU TAVA ESCREVEND0 LENGHT
