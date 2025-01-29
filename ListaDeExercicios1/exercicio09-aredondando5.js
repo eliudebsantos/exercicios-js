@@ -34,7 +34,7 @@ classificaAluno(38)
 classificaAluno(88)
 classificaAluno(61)*/
 
-function teste (nota) {
+/*function teste (nota) {
     let corrigida = arredondarNota(nota)
     return corrigida >= 40 ? `Aprovado com nota ${corrigida}` : `Reprovado com nota ${corrigida}`
 }
@@ -52,4 +52,28 @@ console.log(teste(52))
 console.log(teste(38))
 console.log(teste(37))
 console.log(teste(83))
-console.log(teste(61))
+console.log(teste(61))*/
+
+function teste (num) {
+    let convertido = converterNumero(num)
+
+    if (convertido < 40) {
+        console.log(`Reprovado com a nota ${convertido}`)
+    } else {
+        console.log(`Aprovado com a nota ${convertido}`)
+    }
+}
+
+function converterNumero (num) {
+    if (num % 5 > 2) {
+        return num + (5 - (num % 5))
+    } else {
+        return num - (num % 5)
+    }
+}
+
+teste(37)
+teste(38)
+teste(39)
+teste(36)
+teste(35)
