@@ -79,7 +79,7 @@ function elabora(c100, c50, c10, c5, c1){
 
 console.log(saque(968))*/
 
-function maquinaDeSaque (saque) {
+/*function maquinaDeSaque (saque) {
     let contador100 = 0
     let contador50 = 0
     let contador10 = 0
@@ -153,4 +153,99 @@ function tela(telaSaque, contador1, contador10, contador50, contador100, contado
     }
 }
 
-maquinaDeSaque(1273)
+maquinaDeSaque(1273)*/
+
+function maquinaSaque (saque){
+    let c100 = 0
+    let c50 = 0
+    let c20 = 0
+    let c10 = 0
+    let c5 = 0
+    let c1 = 0
+    
+    const total = saque
+    while (saque >= 0 ){
+        let nota = diferenciaNota(saque)
+        switch(nota){
+            case 100:
+                c100++
+                saque -= nota
+                break
+            case 50:
+                c50++
+                saque -= nota
+                break
+            case 20:
+                c20++
+                saque -= nota
+                break
+            case 10:
+                c10++
+                saque -= nota
+                break
+            case 5:
+                c5++
+                saque -= nota
+                break
+            case 1:
+                c1++
+                saque -= nota
+                break
+        }
+    }
+
+    return tela(total, c100, c50, c20, c10, c5, c1)
+
+
+}
+
+function diferenciaNota(saque){
+    if (saque >= 100){
+        return 100
+    } else if(saque >= 50){
+        return 50
+    } else if (saque >= 20){
+        return 20
+    } else if (saque >= 10){
+        return 10
+    } else if (saque >= 5){
+        return 5
+    } else if (saque >= 1){
+        return 1
+    } 
+}
+
+function tela(total, c100, c50, c20, c10, c5, c1){
+    if (total < 0){
+        console.log("Valor invalido")
+    } else{
+        console.log("Saque: R$" + total.toFixed(2).toString().replace(".",","))
+    }
+
+
+    if (c100 > 0){
+        console.log("Notas de 100: " + c100 + " nota(s)")
+    }
+
+    if (c50 > 0){
+        console.log("Notas de 50: " + c50 + " nota(s)")
+    }
+
+    if (c20 > 0){
+        console.log("Notas de 20: " + c20 + " nota(s)")
+    }
+
+    if (c10 > 0){
+        console.log("Notas de 10: " + c10 + " nota(s)")
+    }
+
+    if (c5 > 0){
+        console.log("Notas de 5: " + c5 + " nota(s)")
+    }
+
+    if (c1 > 0){
+        console.log("Notas de 1: " + c1 + " nota(s)")
+    }
+}
+
+maquinaSaque(10)
