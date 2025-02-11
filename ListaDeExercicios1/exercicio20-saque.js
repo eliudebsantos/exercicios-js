@@ -162,44 +162,49 @@ function maquinaSaque (saque){
     let c10 = 0
     let c5 = 0
     let c1 = 0
-    
-    const total = saque
-    while (saque >= 0 ){
-        let nota = diferenciaNota(saque)
+    let nota = calcular(saque)
+    let saque2 = saque
+
+   while (saque >= nota) {
         switch(nota){
             case 100:
                 c100++
-                saque -= nota
+                saque = saque - nota
                 break
             case 50:
                 c50++
-                saque -= nota
+                saque = saque - 50
                 break
             case 20:
                 c20++
-                saque -= nota
-                break
+                saque = saque - 20
             case 10:
                 c10++
-                saque -= nota
+                saque -= 10
                 break
             case 5:
                 c5++
-                saque -= nota
+                saque -= 5
                 break
-            case 1:
+            case 1: 
                 c1++
-                saque -= nota
+                saque = saque - 1
                 break
         }
-    }
+        nota = calcular(saque)
+   }
 
-    return tela(total, c100, c50, c20, c10, c5, c1)
+    
+    
+
+    
+
+    return tela(c100, c50, c20, c10, c5, c1)
 
 
 }
 
-function diferenciaNota(saque){
+function calcular(saque){
     if (saque >= 100){
         return 100
     } else if(saque >= 50){
@@ -215,13 +220,17 @@ function diferenciaNota(saque){
     } 
 }
 
-function tela(total, c100, c50, c20, c10, c5, c1){
-    if (total < 0){
+
+
+
+
+function tela(c100, c50, c20, c10, c5, c1){
+   /* if (nota < 0){
         console.log("Valor invalido")
     } else{
-        console.log("Saque: R$" + total.toFixed(2).toString().replace(".",","))
-    }
-
+        console.log("Saque: R$" + nota.toFixed(2).toString().replace(".",","))
+    }*/
+   
 
     if (c100 > 0){
         console.log("Notas de 100: " + c100 + " nota(s)")
@@ -248,4 +257,4 @@ function tela(total, c100, c50, c20, c10, c5, c1){
     }
 }
 
-maquinaSaque(10)
+maquinaSaque(78)
