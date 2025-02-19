@@ -6,7 +6,32 @@ mostre o resultado no console. Todos os elementos do vetor resultado deverão ap
 let numeros = [1, 2, 3, 4]
 let nomes = ["Eliude", "Barbosa", "Santos", "Gato"]
 let decimais = [1.3, 1.4, 1.5, 1.6]
-
+/*
 //let vetor = [].concat(numeros, nomes, decimais)
 let vetor = [...nomes, ...numeros, ...decimais]
-console.log(vetor)
+console.log(vetor)*/
+
+/*function concactenar(...args){
+    resultado = []
+    for (i = 0; i < arguments.length; i++){
+        resultado = resultado.concat(arguments[i])
+    }
+    return resultado
+}
+
+console.log(concactenar(numeros, nomes, decimais))*/
+
+function concatenar (...args){
+    let resultado = []
+    for (i= 0; i< args.length; i++){
+        resultado = resultado.concat(args[i])
+    }
+    return resultado
+   /* let resultado = []
+    for (let i = 0; i < arguments.length ; i++){
+        resultado = resultado.concat(arguments[i])
+    }
+    return resultado*/
+}
+
+console.log(concatenar(numeros, nomes, decimais))
