@@ -3,7 +3,7 @@ exemplo, se a entrada for 2, a função deverá retornar "fevereiro", pois este 
 
 function receberMes (numero){
     const mapeado = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
-    return mapeado[--numero]
+    return mapeado[numero]
 }
 
 console.log(receberMes(8))
