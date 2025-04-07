@@ -9,16 +9,25 @@ estaEntre(16, 100, 160) // retornará false
 estaEntre(3, 150, 3) // retornará false
 estaEntre(3, 150, 3, true) // retornará true*/
 
-function estaEntre (min, max, valor, inclusivo = false){
-   
-   if (typeof inclusivo){
-        if (valor >= min && valor <= max) return true
-        else return false
-        
-    } else {
-        if (valor > min && valor < max) return true
-        else return false
-    }
+/*function estaEntre (min, max, valor, inclusivo = false){
+   if (inclusivo){
+        if (valor >= min && valor <= max){
+            return true
+        } else {
+            return false
+        }
+   }
+   else {
+        if (valor > min && valor < max){
+            return true
+        } else {
+            return false
+        }
+   }
+}*/
+
+function estaEntre (min, max, valor, incluso = false){
+    return incluso ? valor >= min && valor <= max : valor > min && valor < max
 }
 
 console.log(estaEntre(10, 100, 50))
